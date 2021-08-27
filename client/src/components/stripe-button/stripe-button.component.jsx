@@ -4,7 +4,8 @@ import axios from 'axios';
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
-  const publishableKey = 'pk_test_b7a3hFL5nC3qlBCZ6bQACpez00gyMMP52H';
+  const publishableKey =
+    'pk_test_51IxcQIBSi2VMAsy4Zh9oQjIYfFJlTcUYgmMsgOBLMH7yNR93yK868ICvX6tZcVsTrvJemHyLJLAEUD4ZLQpH7jcn007xaQ7UcH';
 
   const onToken = token => {
     axios({
@@ -12,8 +13,8 @@ const StripeCheckoutButton = ({ price }) => {
       method: 'post',
       data: {
         amount: priceForStripe,
-        token: token
-      }
+        token: token,
+      },
     })
       .then(response => {
         alert('succesful payment');
